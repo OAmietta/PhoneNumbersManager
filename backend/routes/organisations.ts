@@ -7,7 +7,7 @@ const router = express.Router();
  * @swagger
  * components:
  *   schemas:
- *     Organization:
+ *     Organisation:
  *       type: object
  *       properties:
  *         id:
@@ -22,7 +22,7 @@ const router = express.Router();
  *         data:
  *           type: array
  *           items:
- *             $ref: '#/components/schemas/Organization'
+ *             $ref: '#/components/schemas/Organisation'
  *         message:
  *           type: string
  *           example: "SUCCESS"

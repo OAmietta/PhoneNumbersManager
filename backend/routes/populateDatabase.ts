@@ -89,7 +89,7 @@ const saveInitialAvailablePhoneNumbers = async () => {
  * @swagger
  * /api/populateDatabase:
  *   post:
- *     summary: Populate the database with users, available phone numbers, and organizations if they don't exist
+ *     summary: Populate the database with users, available phone numbers, and organisations if they don't exist
  *     tags: [InitialData]
  *     responses:
  *       200:

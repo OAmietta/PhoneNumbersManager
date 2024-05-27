@@ -47,7 +47,7 @@ const router = express.Router();
  * @swagger
  * /api/getUsers/{orgID}:
  *   get:
- *     summary: Retrieve a list of users by organization ID
+ *     summary: Retrieve a list of users by organisation ID
  *     tags: [Users]
  *     parameters:
  *       - in: path
@@ -55,7 +55,7 @@ const router = express.Router();
  *         schema:
  *           type: integer
  *         required: true
- *         description: ID of the organization
+ *         description: ID of the organisation
  *     responses:
  *       200:
  *         description: A list of users
@@ -66,7 +66,7 @@ const router = express.Router();
  */
 router.get("/api/getUsers/:orgID", async (req, res) => {
   const { orgID } = req.params;
-  //Show the users of a specific organization
+  //Show the users of a specific organisation
   try {
     const usersFinded = await User.find({
       organisationID: orgID,
