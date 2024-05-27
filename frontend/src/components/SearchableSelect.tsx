@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDataContext } from "../hooks/useDataContext";
 import { IPhoneNumber } from "../interfaces";
 
@@ -25,10 +25,6 @@ export default function SearchableSelect(props: {
   const filteredOptions = availableNumbers.filter((option) =>
     option.phoneNumber.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  useEffect(() => {
-    console.log("availablePhones: ", availableNumbers);
-  });
 
   return (
     <div className="relative w-[95%]">

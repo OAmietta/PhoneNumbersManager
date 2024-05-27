@@ -16,17 +16,9 @@ export default function useModal(user: IUser, id: string | undefined) {
 
   const handleAllocate = async (searchTerm: string) => {
     handleClose();
-    console.log("searchTerm: ", searchTerm);
     services
       .allocatePhoneNumber(user.idPassport, user.name, user.surname, searchTerm)
       .then((res: object) => {
-        console.log("res: ", res);
-        console.log(
-          "filter: ",
-          availableNumbers.filter(
-            (item: IPhoneNumber) => item.phoneNumber != searchTerm
-          )
-        );
         setAvailableNumbers(
           availableNumbers.filter(
             (item: IPhoneNumber) => item.phoneNumber != searchTerm
@@ -36,7 +28,6 @@ export default function useModal(user: IUser, id: string | undefined) {
           services
             .getUsers(parseInt(id))
             .then((res: IResponse<IUser>) => {
-              console.log("res: ", res);
               setUsers(res.data);
             })
             .catch((error: string) => {

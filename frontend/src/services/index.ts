@@ -6,7 +6,7 @@ const options = {
     accept: "application/json",
   },
 };
-const url = "http://localhost:3000";
+const url = "http://localhost:3000"; //Must be in a .env file when implementing to different environments
 
 export const services = {
   populateDatabase: async () => {

@@ -8,32 +8,32 @@ import { IOrganisation, IPhoneNumber, IResponse } from "./interfaces";
 import { useDataContext } from "./hooks/useDataContext";
 
 function App() {
-  const { setAvailableNumbers } = useDataContext();
+  const { setAvailableNumbers, setLoading } = useDataContext();
   const [organisations, setOrganisations] = useState<Array<IOrganisation>>([]);
 
   useEffect(() => {
     services
       .populateDatabase()
-      .then((res: object) => {
-        console.log("res: ", res);
-      })
-      .catch((error: string) => {
-        throw new Error(error);
-      });
-    services
-      .getAvailablePhoneNumbers()
-      .then((res: IResponse<IPhoneNumber>) => {
-        console.log("res: ", res.data);
-        setAvailableNumbers(res.data);
-      })
-      .catch((error: string) => {
-        throw new Error(error);
-      });
-    services
-      .getOrganisations()
-      .then((res: IResponse<IOrganisation>) => {
-        console.log("res: ", res);
-        setOrganisations(res.data);
+      .then(() => {
+        setTimeout(() => {
+          services
+            .getAvailablePhoneNumbers()
+            .then((res: IResponse<IPhoneNumber>) => {
+              setAvailableNumbers(res.data);
+            })
+            .catch((error: string) => {
+              throw new Error(error);
+            });
+          services
+            .getOrganisations()
+            .then((res: IResponse<IOrganisation>) => {
+              setOrganisations(res.data);
+            })
+            .catch((error: string) => {
+              throw new Error(error);
+            });
+          setLoading(false);
+        }, 1000);
       })
       .catch((error: string) => {
         throw new Error(error);

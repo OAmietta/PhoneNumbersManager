@@ -16,7 +16,6 @@ export default function UserList() {
       services
         .getUsers(parseInt(id))
         .then((res: IResponse<IUser>) => {
-          console.log("res: ", res);
           setUsers(res.data);
         })
         .catch((error: string) => {

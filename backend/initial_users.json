@@ -12,8 +12,8 @@
     "name": "Bob",
     "surname": "Johnson",
     "organisationID": 322,
-    "phoneNumber": "614536605",
-    "phoneAllocated": true
+    "phoneNumber": "",
+    "phoneAllocated": false
   },
   {
     "idPassport": 99100293,
@@ -28,8 +28,8 @@
     "name": "David",
     "surname": "Brown",
     "organisationID": 123,
-    "phoneNumber": "4567890123",
-    "phoneAllocated": true
+    "phoneNumber": "",
+    "phoneAllocated": false
   },
   {
     "idPassport": 29439383,
@@ -108,8 +108,8 @@
     "name": "Tom",
     "surname": "Brown",
     "organisationID": 123,
-    "phoneNumber": "4567890123",
-    "phoneAllocated": true
+    "phoneNumber": "",
+    "phoneAllocated": false
   },
   {
     "idPassport": 3444383,

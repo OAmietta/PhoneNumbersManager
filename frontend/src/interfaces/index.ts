@@ -29,6 +29,8 @@ interface IContext {
   setAvailableNumbers: React.Dispatch<React.SetStateAction<IPhoneNumber[]>>;
   users: IUser[];
   setUsers: React.Dispatch<React.SetStateAction<IUser[]>>;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export type { IOrganisation, IUser, IPhoneNumber, IResponse, IContext };

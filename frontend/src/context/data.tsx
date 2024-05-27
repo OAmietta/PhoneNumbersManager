@@ -8,10 +8,18 @@ const DataContext = createContext<IContext | undefined>(undefined);
 const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [availableNumbers, setAvailableNumbers] = useState<IPhoneNumber[]>([]);
   const [users, setUsers] = useState<Array<IUser>>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   return (
     <DataContext.Provider
-      value={{ availableNumbers, setAvailableNumbers, users, setUsers }}
+      value={{
+        availableNumbers,
+        setAvailableNumbers,
+        users,
+        setUsers,
+        loading,
+        setLoading,
+      }}
     >
       {children}
     </DataContext.Provider>
