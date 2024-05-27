@@ -12,10 +12,6 @@ app.use(cors()); // To avoid problems with the frontend and backend folders bein
 
 app.use(apiRouter);
 
-app.post("/test", async (req, res) => {
-  return res.status(200).json({ message: "Success" });
-});
-
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
